@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Properties Management</title>
+    <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo"><img src="../../images/logo.png" alt="Logo"></div>
+        <nav class="nav-menu">
+            <div class="nav-item">
+                <a href="dashboard.php">DASHBOARD</a>
+            </div>
+            <div class="nav-item">
+                <a href="clients.php">CLIENTS</a>
+            </div>
+            <div class="nav-item active">
+                <a href="properties.php">PROPERTIES</a>
+            </div>
+            <div class="nav-item">
+                <a href="appointments.php">APPOINTMENTS</a>
+            </div>
+            <div class="nav-item">
+                <a href="accounts.php">ACCOUNTS</a>
+            </div>
+        </nav>
+    </aside>
+
+    <div class="main-container">
+        <header class="header">
+            <h1 class="header-title"><p><b>Properties</b></p></h1>
+            <div class="header-actions">
+                <div class="profile-icon"></div>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <div class="card">
+                <div class="card__title">Property 1</div>
+                <div class="card__content">
+                    <div class="card__image">
+                        <img src="../../images/housepic.png" alt="pic">
+                    </div>
+                    <div class="card__text">
+                        <h2>Ayala Villa</h2>
+                        
+                        <p>💰 ₱ 35,800,000 | Condominium Unit <span>( 5 clients interested )</span></p>
+                        <p>  🟢 Status: AVAILABLE  </p>
+                        <button>See clients</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <br>
+            <div class="card">
+                <div class="card__title">Property 1</div>
+                <div class="card__content">
+                    <div class="card__image">
+                        <img src="../../images/housepic.png" alt="pic">
+                    </div>
+                    <div class="card__text">
+                        <h2>Ayala Villa</h2>
+                        <button>See clients</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card__title">Property 1</div>
+                <div class="card__content">
+                    <div class="card__image">
+                        <img src="../../images/housepic.png" alt="pic">
+                    </div>
+                    <div class="card__text">
+                        <h2>Ayala Villa</h2>
+                        <button>See clients</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card__title">Property 1</div>
+                <div class="card__content">
+                    <div class="card__image">
+                        <img src="../../images/housepic.png" alt="pic">
+                    </div>
+                    <div class="card__text">
+                        <h2>Ayala Villa</h2>
+                        <button>See clients</button>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card__title">Property 1</div>
+                <div class="card__content">
+                    <div class="card__image">
+                        <img src="../../images/housepic.png" alt="pic">
+                    </div>
+                    <div class="card__text">
+                        <h2>Ayala Villa</h2>
+                        <button>See clients</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
