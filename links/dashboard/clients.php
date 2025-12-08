@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Clients Management</title>
+
+    <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
-    <style>
-   
-    </style>
+    <link rel="stylesheet" href="../../css/clients.css">
+<style>
+
+    
+</style>
 </head>
 <body>
     <aside class="sidebar">
@@ -27,68 +29,119 @@
             <div class="nav-item">
                 <a href="accounts.php">ACCOUNTS</a>
             </div>
+            <div class="nav-item">
+            </div>
         </nav>
+        <div>
+            </a>
+        </div>
     </aside>
 
     <div class="main-container">
         <header class="header">
-            <h1 class="header-title"><p><b>Clients</b></p></h1>
+            <h1 class="header-title"><p><b>Dashboard</b></p></h1>
             <div class="header-actions">
-                <div class="profile-icon"></div>
+                <a href="#"><div class="profile-icon"></div></a>
             </div>
         </header>
 
-        <div class="card" style="margin-top: 20px;">
-            <div class="card-title">Client List</div>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Client Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Inquiry Type</th>
-                            <th>Message</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                            require('../../database.php');
-                            $query = "SELECT * FROM inquiry_table ORDER BY name ASC"; 
-                            $exec = $con->query($query);
-                            while($row = $exec->fetch_object()){
-                            ?>
-                            <tr>
-                                <td><?= $row->name ?></td>
-                                <td><?= $row->email ?></td>
-                                <td><?= $row->phone ?></td>
-                                <td><?= $row->inquiry ?></td>
-                                <td><?= $row->message ?></td>
-                                <td><?= $row->status ?></td>
-                                <td>
-                                    <?php
-                                        if($row->stat == 1){
-                                            echo "Inactive";
+        <main class="content">
+                <?php
+                    require('../../links/backend/database.php');
+                    
+                    // Count inquiries
+                    $inquiry_count_query = "SELECT COUNT(*) as count FROM inquiry_table";
+                    $inquiry_count_result = $con->query($inquiry_count_query);
+                    $inquiry_count = $inquiry_count_result->fetch_object()->count;
+                    
+                    // Count bookings
+                    $booking_count_query = "SELECT COUNT(*) as count FROM booking_table";
+                    $booking_count_result = $con->query($booking_count_query);
+                    $booking_count = $booking_count_result->fetch_object()->count;
+                    
+                    $total_clients = $inquiry_count + $booking_count;
+                ?>
+                
+                <!-- Summary Stats -->
+                <div class="summary-stats">
+                    <div class="stat-card">
+                        <div class="stat-number"><?= $total_clients ?></div>
+                        <div class="stat-label">Total Clients</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><?= $inquiry_count ?></div>
+                        <div class="stat-label">Inquiries</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><?= $booking_count ?></div>
+                        <div class="stat-label">Appointments</div>
+                    </div>
+                </div>
+
+            <div class="table-section">
+                <div class="section-header collapsed" onclick="toggleSection('inquiries')">
+                    <div class="section-header-title">
+                        <span>📋 Client Inquiries</span>
+                        <span class="section-badge"><?= $inquiry_count ?></span>
+                    </div>
+                    <span class="collapse-icon">▼</span>
+                </div>
+                <div class="table-content" id="inquiries-content">
+                    <div class="card">
+                        <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Inquiry Type</th>
+                                    <th>Message</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    require('../../links/backend/database.php');
+                                    $query = "SELECT * FROM inquiry_table, ORDER BY id DESC"; 
+                                    $exec = $con->query($query);
+                                    
+                                    if($exec && $exec->num_rows > 0) {
+                                        while($row = $exec->fetch_object()){
+                                ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($row->fname . ' ' . $row->lname) ?></td>
+                                        <td><?= htmlspecialchars($row->email) ?></td>
+                                        <td><?= htmlspecialchars($row->phone) ?></td>
+                                        <td><?= htmlspecialchars($row->inquiry) ?></td>
+                                        <td class="message-cell"><?= htmlspecialchars($row->mes) ?></td>
+                                        <td>
+                                            <?php
+                                                if($row->stat == 0){
+                                                    echo '<span class="status-badge status-pending">Pending</span>';
+                                                } else if($row->status == 1) {
+                                                    echo '<span class="status-badge status-contacted">Contacted</span>';
+                                                } else {
+                                                    echo '<span class="status-badge status-completed">Completed</span>';
+                                                }
+                                            ?>
+                                        </td>
+                                    </tr>
+                                <?php
                                         }
-                                        else{
-                                            echo "Active";
-                                        }
-                                    ?>
-                                </td>
-                                <td>
-                                    <a href="edit.php?id=<?=  $row->id ?>">edit</a>
-                                    <a href="delete.php?id=<?=  $row->id ?>">delete</a>
-                                </td>
-                            </tr>
-                            <?php
-                            }
-                        ?>
-                    </tbody>
-                </table>
+                                    } else {
+                                        echo '<tr><td colspan="7" style="text-align:center; padding: 40px;">No inquiries found</td></tr>';
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main> 
+
+        
+   
     </div>
 </body>
 </html>
-
