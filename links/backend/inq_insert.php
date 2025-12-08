@@ -6,16 +6,16 @@
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $inquiry = $_POST['inquiry'];
-    $message = $_POST['message'];
+    $mes = $_POST['message'];
 
     $query = "INSERT INTO inquiry_table VALUES( 
     NULL,
     '$fname',
-    'lname',
+    '$lname',
     '$email',
     '$phone',
     '$inquiry',
-    '$message',
+    '$mes',
     '0'
     )";
 

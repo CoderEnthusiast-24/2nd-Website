@@ -24,11 +24,11 @@
             <div class="form-row">
                 <div class="form-group">
                     <label>First Name <span class="required">*</span></label>
-                    <input type="text" name="first_name" required>
+                    <input type="text" name="fname" required>
                 </div>
                 <div class="form-group">
                     <label>Last Name <span class="required">*</span></label>
-                    <input type="text" name="last_name" required>
+                    <input type="text" name="lname" required>
                 </div>
             </div>
 
@@ -44,7 +44,11 @@
 
             <div class="form-group">
                 <label for="property">Property/Land of Interest</label>
-                <input type="text" id="property" name="property" placeholder="e.g., Lot 12, Block 5 or specific location">
+                <select name="property" id="property">
+                    <option value="1">Pililla Heights 1</option>
+                    <option value="2">Pililla Heights 2</option>
+                    <option value="3">Pililla Heights 3</option>
+                </select>
             </div>
 
             <div class="form-row">
