@@ -8,6 +8,9 @@
 </head>
 
 <body>
+   
+
+
     <div id="header-container">
         <header class="header">
             <div class="logo"><img src="images/logo.png" alt="logo" id ="logo"></div>
@@ -138,17 +141,31 @@
             <div class="achievements">
                 <div class="ach__con">
                     <img src="images/award1.png" alt="award">
+                    <div class="ach__con-text">
+                        <h3>2025</h3>
+                        <h4>Trusted Realty Company</h4>
+                        <p>MCR Realty Ventures</p>
+                    </div>
                 </div>
                 <div class="ach__con">
                     <img src="images/award2.png" alt="award">
+                    <div class="ach__con-text">
+                        <h3>2025</h3>
+                        <h4>Business Excellence</h4>
+                        <p>MCR Realty Ventures</p>
+                    </div>
+                    <h3></h3>
                 </div>
             </div>
         </div>
     </section> 
    
+
+
+
     <section class="newsletter">
         <div class="newsletter-left">
-            <img src="images/housepic.png" alt="">
+            <img src="images/housepic.png" alt="pic">
         </div>
         
         <div class="newsletter-form-wrapper" id="newsletter">
@@ -157,9 +174,11 @@
                 <p>for more details and a private secured deal then talk to us!</p>
             </div>
             
+
+            <!--
             <div class="newsletter-form">
                 <form action="#" method="post">
-                    <!-- Converted radio buttons to dropdown -->
+                    
                     <div class="form-group">
                         <label>Type of inquiry: </label>
                         <select name="message_type" required>
@@ -199,6 +218,9 @@
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
+            -->
+
+
         </div>
     </section>
 
@@ -255,6 +277,7 @@
             <p>Privacy Notice - Terms and Conditions</p>
         </div>
     </footer>
+    
     <script src="script/script.js"></script>
 </body>
 </html>
