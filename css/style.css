@@ -319,7 +319,7 @@ body {
 
 /* ============================= Intro ============================= */
 .intro {
-  background-color: var(--secondary-green);
+  background-color: var(--primary-green);
   padding: 60px 20px;
   color: var(--text-color1);
 }
@@ -516,7 +516,7 @@ body {
 /* ============================= Portfolio ============================= */
 
 .portfolio {
-  background-color: var(--primary-green);
+  background-color: var(--secondary-green);
   padding: 40px 20px;
   color: var(--text-color1);
 }
@@ -842,10 +842,9 @@ body {
 }
 
 .inquiry-buttons a {
-  display: inline-block;
   padding: 14px 28px;
   border-radius: 10px;
-  text-decoration: none;
+  border: none;
   background-color: var(--primary-green);
   color: white;
   font-size: 15px;
