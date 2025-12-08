@@ -40,12 +40,11 @@
                 <div class="card__title">Property 1</div>
                 <div class="card__content">
                     <div class="card__image">
-                        <img src="../../images/housepic.png" alt="pic">
+                        <img src="../../images/pic1.jpg" alt="pic1">
                     </div>
                     <div class="card__text">
-                        <h2>Ayala Villa</h2>
-                        
-                        <p>💰 ₱ 35,800,000 | Condominium Unit <span>( 5 clients interested )</span></p>
+                        <h2>Pililla Heights 1</h2>
+                        <p>💰 ₱ 5000 – ₱ 7000 / SQM <span>( 20 clients interested )</span></p>
                         <p>  🟢 Status: AVAILABLE  </p>
                         <button>See clients</button>
                     </div>
@@ -57,56 +56,35 @@
 
             <br>
             <div class="card">
-                <div class="card__title">Property 1</div>
+                <div class="card__title">Property 2</div>
                 <div class="card__content">
                     <div class="card__image">
-                        <img src="../../images/housepic.png" alt="pic">
+                        <img src="../../images/pic2.jpg" alt="pic3">
                     </div>
                     <div class="card__text">
-                        <h2>Ayala Villa</h2>
+                        <h2>Pililla Heights 2</h2>
+                         <p>💰 ₱ 6000 – ₱ 8000 / SQM <span>( 15 clients interested )</span></p>
+                        <p>  🟢 Status: AVAILABLE  </p>
                         <button>See clients</button>
                     </div>
                 </div>
             </div>
             <br>
             <div class="card">
-                <div class="card__title">Property 1</div>
+                <div class="card__title">Property 3</div>
                 <div class="card__content">
                     <div class="card__image">
-                        <img src="../../images/housepic.png" alt="pic">
+                        <img src="../../images/pic3.jpg" alt="pic3">
                     </div>
                     <div class="card__text">
-                        <h2>Ayala Villa</h2>
+                        <h2>Pililla Heights 3</h2>
+                        <p>💰 ₱ 8000 – ₱ 10000 / SQM <span>( 8 clients interested )</span></p>
+                        <p>  🟢 Status: AVAILABLE  </p>
                         <button>See clients</button>
                     </div>
                 </div>
             </div>
             <br>
-            <div class="card">
-                <div class="card__title">Property 1</div>
-                <div class="card__content">
-                    <div class="card__image">
-                        <img src="../../images/housepic.png" alt="pic">
-                    </div>
-                    <div class="card__text">
-                        <h2>Ayala Villa</h2>
-                        <button>See clients</button>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card__title">Property 1</div>
-                <div class="card__content">
-                    <div class="card__image">
-                        <img src="../../images/housepic.png" alt="pic">
-                    </div>
-                    <div class="card__text">
-                        <h2>Ayala Villa</h2>
-                        <button>See clients</button>
-                    </div>
-                </div>
-            </div>
         </main>
     </div>
 </body>
