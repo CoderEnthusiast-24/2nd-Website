@@ -170,9 +170,15 @@
         
         <div class="newsletter-form-wrapper" id="newsletter">
             <div class="form-heading">
-                <h3>Get in Touch with Company Properties</h3>
-                <p>for more details and a private secured deal then talk to us!</p>
+                <h3>Get in Touch with us</h3>
+                <p>We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+                
+                <div class="inquiry-buttons">
+                    <a href="inquiry.php" class="btn-inquiry">Have an Inquiry?</a>
+                    <a href="booking.php" class="btn-booking">Book an Appointment</a>
+                </div>  
             </div>
+        </div>
             
 
             <!--
@@ -218,10 +224,10 @@
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
-            -->
+            
 
 
-        </div>
+        </div>-->
     </section>
 
       

@@ -29,7 +29,6 @@
                 <a href="accounts.php">ACCOUNTS</a>
             </div>
             <div class="nav-item">
-                <a href="../../landing.php">WEBSITE</a>
             </div>
         </nav>
         <div>
@@ -39,15 +38,26 @@
 
     <div class="main-container">
         <header class="header">
-            <h1 class="header-title"><p><b>DASHBOARD</b></p></h1>
+            <h1 class="header-title"><p><b>Dashboard</b></p></h1>
             <div class="header-actions">
                 <a href="#"><div class="profile-icon"></div></a>
             </div>
         </header>
 
         
-
-            <div class="card" style="margin-top: 20px;">
+ <div class="dashboard-grid">
+                <div class="card">
+                    <div class="card-title">Total Accounts</div>
+                    <div class="card-value">523</div>
+                    <div class="card-subtitle">All user accounts</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Premium Accounts</div>
+                    <div class="card-value">187</div>
+                    <div class="card-subtitle">Active subscriptions</div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 5px;">
                 <div class="card-title"> </div>
                 <div class="table-container">
                     <table>
