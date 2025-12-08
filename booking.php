@@ -4,139 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Appointment</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="css/booking.css">
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            padding: 20px;
-        }
-
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .form-description {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            color: #333;
-            font-weight: 500;
-            font-size: 14px;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        input[type="date"],
-        input[type="time"],
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 14px;
-            font-family: Arial, sans-serif;
-            transition: border-color 0.3s;
-        }
-
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #1e293b;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 15px;
-        }
-
-        .form-row .form-group {
-            flex: 1;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: #1e293b;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .submit-btn:hover {
-            background-color: #0f172a;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #1e293b;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        .required {
-            color: red;
-        }
-
-        .info-note {
-            background-color: #f0f9ff;
-            padding: 12px;
-            border-radius: 4px;
-            border-left: 3px solid #38bdf8;
-            margin-bottom: 25px;
-            font-size: 13px;
-            color: #0369a1;
-        }
-
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-        }
     </style>
 </head>
 <body>
@@ -150,10 +19,17 @@
             Available viewing hours: Monday - Saturday, 9:00 AM - 5:00 PM
         </div>
 
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="name">Full Name <span class="required">*</span></label>
-                <input type="text" id="name" name="name" required>
+        <form action="links/backend/bkn_insert.php" method="POST">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name <span class="required">*</span></label>
+                    <input type="text" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name <span class="required">*</span></label>
+                    <input type="text" name="last_name" required>
+                </div>
             </div>
 
             <div class="form-group">
@@ -202,7 +78,7 @@
             <button type="submit" class="submit-btn">Schedule Appointment</button>
         </form>
 
-        <a href="landing.php" class="back-link">← Back to Home</a>
+        <a href="../../landing.php" class="back-link">← Back to Home</a>
     </div>
 </body>
 </html>

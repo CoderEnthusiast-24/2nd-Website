@@ -38,89 +38,56 @@
             </div>
         </header>
 
-    
-
-            <div class="card" style="margin-top: 20px;">
-                <div class="card-title">Client List</div>
-                <div class="table-container">
-                    <table>
-                        <thead>
+        <div class="card" style="margin-top: 20px;">
+            <div class="card-title">Client List</div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Inquiry Type</th>
+                            <th>Message</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            require('../../database.php');
+                            $query = "SELECT * FROM inquiry_table ORDER BY name ASC"; 
+                            $exec = $con->query($query);
+                            while($row = $exec->fetch_object()){
+                            ?>
                             <tr>
-                                <th>Client Name</th>
-                                <th>Email</th>
-                                <th>Gmail</th>
-                                <th>Join Date</th>
-                                <th>Activity</th>
-                                <th>Address</th>
-                                <th>Status</th>
+                                <td><?= $row->name ?></td>
+                                <td><?= $row->email ?></td>
+                                <td><?= $row->phone ?></td>
+                                <td><?= $row->inquiry ?></td>
+                                <td><?= $row->message ?></td>
+                                <td><?= $row->status ?></td>
+                                <td>
+                                    <?php
+                                        if($row->stat == 1){
+                                            echo "Inactive";
+                                        }
+                                        else{
+                                            echo "Active";
+                                        }
+                                    ?>
+                                </td>
+                                <td>
+                                    <a href="edit.php?id=<?=  $row->id ?>">edit</a>
+                                    <a href="delete.php?id=<?=  $row->id ?>">delete</a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Sarah Anderson
-                                    <span class="small-muted">Phone: +63 917 123 4567</span>
-                                </td>
-                                <td>sarah.anderson@email.com</td>
-                                <td>sarah.anderson@gmail.com</td>
-                                <td>Oct 15, 2025</td>
-                                <td>
-                                    Last login: Nov 05, 2025
-                                    <span class="small-muted">Viewed property: 221B Elm St</span>
-                                </td>
-                                <td>Brgy. San Roque, Antipolo, Rizal</td>
-                                <td><span class="status-badge status-active">Active</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Michael Chen
-                                    <span class="small-muted">Phone: +63 915 987 6543</span>
-                                </td>
-                                <td>m.chen@email.com</td>
-                                <td>michael.chen@gmail.com</td>
-                                <td>Oct 10, 2025</td>
-                                <td>
-                                    Last login: Nov 01, 2025
-                                    <span class="small-muted">Booked viewing: Oct 28, 2025</span>
-                                </td>
-                                <td>Unit 4B, Green Towers, Ortigas Ave, Pasig</td>
-                                <td><span class="status-badge status-active">Active</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Emma Rodriguez
-                                    <span class="small-muted">Phone: +63 922 555 0011</span>
-                                </td>
-                                <td>emma.r@email.com</td>
-                                <td>emma.rodriguez@gmail.com</td>
-                                <td>Sep 28, 2025</td>
-                                <td>
-                                    Last login: Oct 30, 2025
-                                    <span class="small-muted">Saved search: 2-bedroom near school</span>
-                                </td>
-                                <td>Brgy. Dela Paz, Antipolo, Rizal</td>
-                                <td><span class="status-badge status-active">Active</span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    David Thompson
-                                    <span class="small-muted">Phone: +63 916 444 3322</span>
-                                </td>
-                                <td>d.thompson@email.com</td>
-                                <td>david.thompson@gmail.com</td>
-                                <td>Sep 15, 2025</td>
-                                <td>
-                                    Last login: Sep 20, 2025
-                                    <span class="small-muted">No recent activity</span>
-                                </td>
-                                <td>Lot 12, Sunrise Village, Taytay, Rizal</td>
-                                <td><span class="status-badge status-inactive">Inactive</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                            <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR WEBSITE</title>
     <link rel="stylesheet" href="css/style.css">
 
@@ -46,12 +47,14 @@
               </div>
               
                 <div class="about__text">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Exercitationem, cum possimus! Eveniet sit placeat
-                    doloribus mollitia laudantium laboriosam similique
-                        perspiciatis. Nobis, perspiciatis. Commodi a cumque
-                        aliquam ad tempore eligendi ratione?
+                <p> Nestled in the serene highlands of Pililla, 
+                    Rizal, our prime residential lots offer you 
+                    the perfect opportunity to build your dream 
+                    home away from the hustle and bustle of city
+                    life. Located in one of Rizal's most promising 
+                    areas, these properties combine natural beauty 
+                    with practical advantages that make them ideal 
+                    for families seeking a peaceful sanctuary.
                 </p>
                 </div>
 

@@ -12,6 +12,8 @@
         }
 
         body {
+            background: url('images/pic7.jpg') no-repeat center center fixed;
+            background-size: cover;
             font-family: Arial, sans-serif;
             background-color: #f5f5f5;
             padding: 20px;
@@ -41,6 +43,17 @@
 
         .form-group {
             margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
         }
 
         label {
@@ -109,6 +122,12 @@
         .required {
             color: red;
         }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -118,10 +137,16 @@
             Interested in viewing our available land? Fill out this form and we'll get back to you shortly to arrange a property showing.
         </p>
 
-        <form action="#" method="POST">
-            <div class="form-group">
-                <label for="name">Full Name <span class="required">*</span></label>
-                <input type="text" id="name" name="name" required>
+        <form action="links/backend/inq_insert.php" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>First Name <span class="required">*</span></label>
+                    <input type="text" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label>Last Name <span class="required">*</span></label>
+                    <input type="text" name="last_name" required>
+                </div>
             </div>
 
             <div class="form-group">
