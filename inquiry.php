@@ -141,11 +141,11 @@
             <div class="form-row">
                 <div class="form-group">
                     <label>First Name <span class="required">*</span></label>
-                    <input type="text" name="first_name" required>
+                    <input type="text" name="fname" required>
                 </div>
                 <div class="form-group">
                     <label>Last Name <span class="required">*</span></label>
-                    <input type="text" name="last_name" required>
+                    <input type="text" name="lname" required>
                 </div>
             </div>
 
@@ -160,8 +160,8 @@
             </div>
 
             <div class="form-group">
-                <label for="inquiry-type">Type of Inquiry <span class="required">*</span></label>
-                <select id="inquiry-type" name="inquiry_type" required>
+                <label for="inquiry">Type of Inquiry <span class="required">*</span></label>
+                <select id="inquiry" name="inquiry" required>
                     <option value="">Select inquiry type</option>
                     <option value="general">General Inquiry About Land</option>
                     <option value="property">Property Inquiry (Specific Land)</option>
