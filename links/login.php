@@ -5,71 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in or Create Account</title>
     <link rel="stylesheet" href="../css/login.css">
-
-    <style>
-      /* Moved inline styles to internal CSS */
-
-      /* spacing for password labels */
-      label[for="loginPass"],
-      label[for="newPass"],
-      label[for="confirmPass"] {
-        margin-top: 10px;
-      }
-
-      /* small secondary labels (show password, remember) */
-      .small-label {
-        margin-top: 8px;
-        font-weight: 400;
-        font-size: 13px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      .small-label-inline {
-        font-weight: 400;
-        font-size: 13px;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-      }
-
-      /* actions container variants */
-      .actions.space-between {
-        justify-content: space-between;
-        margin-top: 12px;
-        display: flex;
-        align-items: center;
-      }
-
-      .actions.right {
-        justify-content: flex-end;
-        margin-top: 12px;
-        display: flex;
-        gap: 8px;
-      }
-
-      .btn-row {
-        display: flex;
-        gap: 8px;
-      }
-
-      /* hide register form initially */
-      #registerForm.hidden {
-        display: none;
-      }
-
-      /* row for first/last name */
-      .row {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 10px;
-      }
-
-      .row .col {
-        flex: 1;
-      }
-    </style>
 </head>
 <body>
  
@@ -81,7 +16,7 @@
       </div>
 
       <!-- Login form -->
-      <form id="loginForm" autocomplete="on" novalidate>
+      <form id="loginForm" autocomplete="on" action="" method="POST" novalidate>
         <label for="loginEmail">Email or phone</label>
         <input id="loginEmail" name="loginEmail" type="text" placeholder="Email or phone" required />
 

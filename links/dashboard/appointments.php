@@ -3,6 +3,7 @@
 <head>
     <title>Appointments Management</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/appointment.css">
 </head>
 <body>
     <aside class="sidebar">
@@ -20,9 +21,6 @@
             <div class="nav-item active">
                 <a href="appointments.php">APPOINTMENTS</a>
             </div>
-            <div class="nav-item">
-                <a href="accounts.php">ACCOUNTS</a>
-            </div>
         </nav>
     </aside>
 
@@ -35,61 +33,260 @@
         </header>
 
         <main class="content">
-            <div class="dashboard-grid">
-                <div class="card">
-                    <div class="card-title">Total Accounts</div>
-                    <div class="card-value">523</div>
-                    <div class="card-subtitle">All user accounts</div>
+            <?php
+                require('../../links/backend/database.php');
+                
+                // Get statistics
+                $total_query = "SELECT COUNT(*) as count FROM booking_table";
+                $total_result = $con->query($total_query);
+                $total_appointments = $total_result->fetch_object()->count;
+                
+                $pending_query = "SELECT COUNT(*) as count FROM booking_table WHERE stat = 0";
+                $pending_result = $con->query($pending_query);
+                $pending_count = $pending_result->fetch_object()->count;
+                
+                $accepted_query = "SELECT COUNT(*) as count FROM booking_table WHERE stat = 1";
+                $accepted_result = $con->query($accepted_query);
+                $accepted_count = $accepted_result->fetch_object()->count;
+                
+                $completed_query = "SELECT COUNT(*) as count FROM booking_table WHERE stat = 3";
+                $completed_result = $con->query($completed_query);
+                $completed_count = $completed_result->fetch_object()->count;
+                
+                // Get all appointments
+                $appointments_query = "SELECT * FROM booking_table ORDER BY date ASC, time ASC";
+                $appointments_result = $con->query($appointments_query);
+                
+                // Organize appointments by date
+                $appointments_by_date = [];
+                while($row = $appointments_result->fetch_object()) {
+                    $date = $row->date;
+                    if(!isset($appointments_by_date[$date])) {
+                        $appointments_by_date[$date] = [];
+                    }
+                    $appointments_by_date[$date][] = $row;
+                }
+            ?>
+
+            <!-- Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number"><?= $total_appointments ?></div>
+                    <div class="stat-label">Total Appointments</div>
                 </div>
-                <div class="card">
-                    <div class="card-title">Premium Accounts</div>
-                    <div class="card-value">187</div>
-                    <div class="card-subtitle">Active subscriptions</div>
+                <div class="stat-card">
+                    <div class="stat-number"><?= $pending_count ?></div>
+                    <div class="stat-label">Pending</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><?= $accepted_count ?></div>
+                    <div class="stat-label">Accepted</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number"><?= $completed_count ?></div>
+                    <div class="stat-label">Completed</div>
                 </div>
             </div>
 
-            <div class="card" style="margin-top: 20px;">
-                <div class="card-title">Appointment Schedule</div>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Client</th>
-                                <th>Property</th>
-                                <th>Date & Time</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Sarah Anderson</td>
-                                <td>Sunset Apartments</td>
-                                <td>Oct 25, 2025 - 2:00 PM</td>
-                                <td><span class="status-badge status-active">Scheduled</span></td>
-                            </tr>
-                            <tr>
-                                <td>Michael Chen</td>
-                                <td>Commerce Plaza</td>
-                                <td>Oct 26, 2025 - 10:30 AM</td>
-                                <td><span class="status-badge status-active">Scheduled</span></td>
-                            </tr>
-                            <tr>
-                                <td>Emma Rodriguez</td>
-                                <td>Green Valley Homes</td>
-                                <td>Oct 24, 2025 - 3:15 PM</td>
-                                <td><span class="status-badge status-active">Completed</span></td>
-                            </tr>
-                            <tr>
-                                <td>David Thompson</td>
-                                <td>Tech Hub Office</td>
-                                <td>Oct 23, 2025 - 11:00 AM</td>
-                                <td><span class="status-badge status-inactive">Cancelled</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Calendar -->
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h3>📅 Appointment Calendar</h3>
+                    <div class="calendar-nav">
+                        <button id="prevMonth">← Previous</button>
+                        <span id="currentMonth"></span>
+                        <button id="nextMonth">Next →</button>
+                    </div>
                 </div>
+
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar will be generated by JavaScript -->
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color today"></div>
+                        <span>Today</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color pending"></div>
+                        <span>Pending</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color accepted"></div>
+                        <span>Accepted</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color completed"></div>
+                        <span>Completed</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color declined"></div>
+                        <span>Declined/Cancelled</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selected Date Appointments -->
+            <div class="appointments-detail" id="appointmentsDetail" style="display: none;">
+                <h4 id="selectedDate"></h4>
+                <div id="appointmentsList"></div>
             </div>
         </main>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Pass PHP data to JavaScript
+        const appointmentsData = <?= json_encode($appointments_by_date) ?>;
+        
+        let currentDate = new Date();
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        function renderCalendar() {
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth();
+            
+            // Update month display
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"];
+            document.getElementById('currentMonth').textContent = `${monthNames[month]} ${year}`;
+            
+            // Get first day of month and number of days
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            
+            // Clear calendar
+            const grid = document.getElementById('calendarGrid');
+            grid.innerHTML = '';
+            
+            // Add day headers
+            const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            dayHeaders.forEach(day => {
+                const header = document.createElement('div');
+                header.className = 'calendar-day-header';
+                header.textContent = day;
+                grid.appendChild(header);
+            });
+            
+            // Add empty cells for days before month starts
+            for (let i = 0; i < firstDay; i++) {
+                const emptyDay = document.createElement('div');
+                emptyDay.className = 'calendar-day empty';
+                grid.appendChild(emptyDay);
+            }
+            
+            // Add days of month
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dayElement = document.createElement('div');
+                dayElement.className = 'calendar-day';
+                
+                const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const currentDateObj = new Date(year, month, day);
+                
+                // Check if this is today
+                if (currentDateObj.getTime() === today.getTime()) {
+                    dayElement.classList.add('today');
+                }
+                
+                // Check for appointments on this date
+                if (appointmentsData[dateStr]) {
+                    const appointments = appointmentsData[dateStr];
+                    
+                    // Determine status for coloring (priority: declined > pending > accepted > completed)
+                    let hasDeclined = false;
+                    let hasPending = false;
+                    let hasAccepted = false;
+                    let hasCompleted = false;
+                    
+                    appointments.forEach(apt => {
+                        if (apt.stat == 2) hasDeclined = true;
+                        else if (apt.stat == 0) hasPending = true;
+                        else if (apt.stat == 1) hasAccepted = true;
+                        else if (apt.stat == 3) hasCompleted = true;
+                    });
+                    
+                    if (hasDeclined) {
+                        dayElement.classList.add('has-declined');
+                    } else if (hasPending) {
+                        dayElement.classList.add('has-appointments');
+                    } else if (hasAccepted) {
+                        dayElement.classList.add('has-accepted');
+                    } else if (hasCompleted) {
+                        dayElement.classList.add('has-completed');
+                    }
+                    
+                    dayElement.innerHTML = `
+                        <div class="calendar-day-number">${day}</div>
+                        <div class="appointment-count">${appointments.length} apt${appointments.length > 1 ? 's' : ''}</div>
+                    `;
+                    
+                    dayElement.addEventListener('click', () => showAppointments(dateStr, appointments));
+                } else {
+                    dayElement.innerHTML = `<div class="calendar-day-number">${day}</div>`;
+                }
+                
+                grid.appendChild(dayElement);
+            }
+        }
+
+        function showAppointments(dateStr, appointments) {
+            const detailSection = document.getElementById('appointmentsDetail');
+            const dateDisplay = document.getElementById('selectedDate');
+            const appointmentsList = document.getElementById('appointmentsList');
+            
+            // Format date
+            const date = new Date(dateStr + 'T00:00:00');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            dateDisplay.textContent = `Appointments for ${date.toLocaleDateString('en-US', options)}`;
+            
+            // Clear previous appointments
+            appointmentsList.innerHTML = '';
+            
+            // Add appointments
+            appointments.forEach(apt => {
+                const card = document.createElement('div');
+                const statusClass = ['pending', 'accepted', 'declined', 'completed'][apt.stat] || 'pending';
+                const statusText = ['Pending', 'Accepted', 'Declined', 'Completed'][apt.stat] || 'Pending';
+                
+                card.className = `appointment-card ${statusClass}`;
+                card.innerHTML = `
+                    <div class="appointment-time">${apt.time} - ${statusText}</div>
+                    <div class="appointment-client">${apt.fname} ${apt.lname} (${apt.visitors} visitor${apt.visitors != 1 ? 's' : ''})</div>
+                    <div class="appointment-property">Property: ${apt.property}</div>
+                    ${apt.notes ? `<div class="appointment-property">Notes: ${apt.notes}</div>` : ''}
+                `;
+                
+                appointmentsList.appendChild(card);
+            });
+            
+            detailSection.style.display = 'block';
+            detailSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        document.getElementById('prevMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.getElementById('nextMonth').addEventListener('click', () => {
+            currentDate.setMonth(currentDate.getMonth() + 1);
+            renderCalendar();
+        });
+
+        // Initial render
+        renderCalendar();
+    </script>
 </body>
 </html>

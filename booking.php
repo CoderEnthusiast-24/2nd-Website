@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Appointment</title>
     <link rel="stylesheet" href="css/booking.css">
-
     </style>
 </head>
 <body>
@@ -45,9 +44,9 @@
             <div class="form-group">
                 <label for="property">Property/Land of Interest</label>
                 <select name="property" id="property">
-                    <option value="1">Pililla Heights 1</option>
-                    <option value="2">Pililla Heights 2</option>
-                    <option value="3">Pililla Heights 3</option>
+                    <option value="Pililla Heights 1">Pililla Heights 1</option>
+                    <option value="Pililla Heights 2">Pililla Heights 2</option>
+                    <option value="Pililla Heights 3">Pililla Heights 3</option>
                 </select>
             </div>
 
@@ -82,7 +81,7 @@
             <button type="submit" class="submit-btn">Schedule Appointment</button>
         </form>
 
-        <a href="../../landing.php" class="back-link">← Back to Home</a>
+        <a href="landing.php" class="back-link">← Back to Home</a>
     </div>
 </body>
 </html>
