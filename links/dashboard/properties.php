@@ -3,6 +3,7 @@
 <head>
     <title>Properties Management</title>
     <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/properties.css">
 </head>
 <body>
     <aside class="sidebar">
@@ -20,9 +21,6 @@
             <div class="nav-item">
                 <a href="appointments.php">APPOINTMENTS</a>
             </div>
-            <div class="nav-item">
-                <a href="accounts.php">ACCOUNTS</a>
-            </div>
         </nav>
     </aside>
 
@@ -35,56 +33,61 @@
         </header>
 
         <main class="content">
-
-            <div class="card">
-                <div class="card__title">Property 1</div>
-                <div class="card__content">
-                    <div class="card__image">
-                        <img src="../../images/pic1.jpg" alt="pic1">
+            <div class="featured-properties-section">
+                <h2 class="featured-title">FEATURED PROPERTIES</h2>
+                <div class="featured-properties-grid">
+                    <!-- Property Card 1 -->
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="../../images/pic1.jpg" alt="house1 Property">
+                            <span class="location-badge">PILILLA</span>
+                        </div>
+                        <div class="featured-details">
+                            <div class="featured-price">Pililla Heights 1</div>
+                            <div class="featured-id"> ID No.27988</div>
+                            <div class="featured-desc">₱ 5000-7000</div>
+                            <div class="featured-icons">
+                                
+                                <span>🟢 Status: AVAILABLE</span>
+                            </div>
+                            
+                        </div>
                     </div>
-                    <div class="card__text">
-                        <h2>Pililla Heights 1</h2>
-                        <p>💰 ₱ 5000 – ₱ 7000 / SQM <span>( 20 clients interested )</span></p>
-                        <p>  🟢 Status: AVAILABLE  </p>
-                        <button>See clients</button>
+                    <!-- Property Card 2 -->
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="../../images/pic2.jpg" alt="house2 Property">
+                            <span class="location-badge">PILILLA</span>
+                        </div>
+                        <div class="featured-details">
+                            <div class="featured-price">Pililla Heights 2</div>
+                            <div class="featured-id"> ID No.29134</div>
+                            <div class="featured-desc">₱ 4000-8000</div>
+                            <div class="featured-icons">
+                                <span>🟢 Status: AVAILABLE</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <!-- Property Card 3 -->
+                    <div class="featured-card">
+                        <div class="featured-image">
+                            <img src="../../images/pic3.jpg" alt="House3 Property">
+                            <span class="location-badge">PILILLA</span>
+                        </div>
+                        <div class="featured-details">
+                            <div class="featured-price">Pililla Heights 3</div>
+                            <div class="featured-id">Presello ID No.37379</div>
+                            <div class="featured-desc">₱ 8000-10000</div>
+                            <div class="featured-icons">
+                                
+                                <span>🟢 Status: AVAILABLE</span>
+                            </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-            <br>
-            <div class="card">
-                <div class="card__title">Property 2</div>
-                <div class="card__content">
-                    <div class="card__image">
-                        <img src="../../images/pic2.jpg" alt="pic3">
-                    </div>
-                    <div class="card__text">
-                        <h2>Pililla Heights 2</h2>
-                         <p>💰 ₱ 6000 – ₱ 8000 / SQM <span>( 15 clients interested )</span></p>
-                        <p>  🟢 Status: AVAILABLE  </p>
-                        <button>See clients</button>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="card">
-                <div class="card__title">Property 3</div>
-                <div class="card__content">
-                    <div class="card__image">
-                        <img src="../../images/pic3.jpg" alt="pic3">
-                    </div>
-                    <div class="card__text">
-                        <h2>Pililla Heights 3</h2>
-                        <p>💰 ₱ 8000 – ₱ 10000 / SQM <span>( 8 clients interested )</span></p>
-                        <p>  🟢 Status: AVAILABLE  </p>
-                        <button>See clients</button>
-                    </div>
-                </div>
-            </div>
-            <br>
         </main>
     </div>
 </body>

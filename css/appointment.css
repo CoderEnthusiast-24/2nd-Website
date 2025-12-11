@@ -1,0 +1,265 @@
+* {
+            margin: 0;
+            padding: 0;
+        }
+
+    
+        .calendar-container {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .calendar-header h3 {
+            font-size: 24px;
+            color: #1e5631;
+            margin: 0;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .calendar-nav button {
+            background-color: #2d7a47;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .calendar-nav button:hover {
+            background-color: #52b788;
+        }
+
+        .calendar-nav span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e5631;
+            min-width: 150px;
+            text-align: center;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .calendar-day-header {
+            text-align: center;
+            font-weight: 600;
+            color: #1e5631;
+            padding: 12px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .calendar-day {
+            aspect-ratio: 1;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            background-color: white;
+        }
+
+        .calendar-day:hover {
+            border-color: #52b788;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .calendar-day.empty {
+            background-color: #f9f9f9;
+            cursor: default;
+        }
+
+        .calendar-day.empty:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: #e0e0e0;
+        }
+
+        .calendar-day-number {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 4px;
+        }
+
+        .calendar-day.today {
+            border: 2px solid #2d7a47;
+            background-color: #e8f5e9;
+        }
+
+        .calendar-day.has-appointments {
+            background-color: #fff3cd;
+            border-color: #ffc107;
+        }
+
+        .calendar-day.has-accepted {
+            background-color: #d1ecf1;
+            border-color: #17a2b8;
+        }
+
+        .calendar-day.has-completed {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+
+        .calendar-day.has-declined {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .appointment-count {
+            font-size: 11px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 24px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .legend-color.pending {
+            background-color: #fff3cd;
+            border-color: #ffc107;
+        }
+
+        .legend-color.accepted {
+            background-color: #d1ecf1;
+            border-color: #17a2b8;
+        }
+
+        .legend-color.completed {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+
+        .legend-color.declined {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .legend-color.today {
+            background-color: #e8f5e9;
+            border: 2px solid #2d7a47;
+        }
+
+        .appointments-detail {
+            margin-top: 24px;
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .appointments-detail h4 {
+            color: #1e5631;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .appointment-card {
+            border-left: 4px solid #52b788;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .appointment-card.pending {
+            border-left-color: #ffc107;
+        }
+
+        .appointment-card.accepted {
+            border-left-color: #17a2b8;
+        }
+
+        .appointment-card.completed {
+            border-left-color: #28a745;
+        }
+
+        .appointment-card.declined {
+            border-left-color: #dc3545;
+        }
+
+        .appointment-time {
+            font-weight: 600;
+            color: #1e5631;
+            margin-bottom: 4px;
+        }
+
+        .appointment-client {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .appointment-property {
+            color: #999;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #52b788;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1e5631;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }

@@ -208,11 +208,11 @@ body {
 }
 
 .nav a:hover {
-  background-color: #4FC3F7; /* Your accent blue */
+  background-color: #ebebeb; /* Your accent blue */
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  border: 2px solid #4FC3F7;
-  color: white;
+  border: 2px transparent ;
+  color: rgb(0, 0, 0);
 }
 
 /* Nav links when header is SCROLLED - on green background */
@@ -569,7 +569,7 @@ body {
 }
 
 .property-image {
-  background-color: rgba(40, 51, 37, 0.851);
+  background-color: var(--secondary-green);
   width: 100%;
   height: 300px;
   position: relative;

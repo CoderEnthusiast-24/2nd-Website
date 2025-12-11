@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MCR WEBSITE</title>
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 
 <body>
-   
-
-
     <div id="header-container">
         <header class="header">
             <div class="logo"><img src="images/logo.png" alt="logo" id ="logo"></div>
@@ -32,7 +28,6 @@
         <div class="hero-image"><img src="images/pic6.jpg" alt="pic6"></div>
         <div class="hero-tagline">
             <h2>Your Dream Home Awaits</h2>
-            <p>Find Your Perfect Property Today</p>
         </div>
     </section>
 
@@ -77,19 +72,19 @@
     <section id="services" class="featured">
         <div class="container">
             <div class="featured__content">
-            <div class="featured__image">
-                <img src="images/pic5.jpg" alt="house">
-            </div>
-            <div class="featured__text">
-                <h2 class="heading">Featured Property</h2>
-                <a href="#" class="button">Click to see more...</a>
-                <p>
-                this is best property our real estate has to offer
-                as we look at the exterior design as grand as it look
-                we could expect more and be amamzed on how beautiful
-                the interior is.
-                </p>
-            </div>
+                <div class="featured__image">
+                    <img src="images/pic5.jpg" alt="house">
+                </div>
+                <div class="featured__text">
+                    <h2 class="heading">Featured Property</h2>
+                    <a href="#" class="button">Click to see more...</a>
+                    <p>
+                    this is best property our real estate has to offer
+                    as we look at the exterior design as grand as it look
+                    we could expect more and be amamzed on how beautiful
+                    the interior is.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -98,7 +93,6 @@
     <section class="portfolio" id="properties">
         <div class="container">
             <h2 class="heading">Our properties</h2>
-            <p class="button">see more</p>
 
             <div class="property">
                 <table class="property__table">
@@ -128,6 +122,21 @@
                             <p>
                             📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
                             💰 ₱ 6000 – ₱ 8000 / SQM</p>
+                        </td>
+                    </tr>
+                    <tr class="property__row">
+                        <td class="property__data">
+                            <h2>Pililla Heights 3</h2>
+                            <p> "Own your slice of paradise in Pililla, Rizal 🌿✨.</p>
+
+                            <br>
+                            
+                            <p>
+                            📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
+                            💰 ₱ 5000 – ₱ 7000 / SQM</p> 
+                        </td>
+                        <td class="property-image">
+                            <img src="images/pic3.jpg" alt="house4">
                         </td>
                     </tr>
                 </table>
@@ -182,55 +191,7 @@
                 </div>  
             </div>
         </div>
-            
-
-            <!--
-            <div class="newsletter-form">
-                <form action="#" method="post">
-                    
-                    <div class="form-group">
-                        <label>Type of inquiry: </label>
-                        <select name="message_type" required>
-                            <option value="general">General Inquiry</option>
-                            <option value="property">Property Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name="first_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="last_name" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>Contact Number</label>
-                        <input type="tel" name="phone">
-                    </div>
-                    
-                    <div class="form-group checkbox">
-                        <label>
-                            <input type="checkbox" name="subscribe" checked>
-                            Subscribe to newsletter
-                        </label>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </div>
-            
-
-
-        </div>-->
+             
     </section>
 
       
@@ -240,11 +201,7 @@
                 <div class="footer-columns">
                     <div class="footer-column">
                         <h3>MCR REALTY VENTURES OPC</h3>
-                        <p>Lorem ipsum dolor, 
-                            sit amet consectetur adipisicing elit.
-                             Laborum sequi, illo praescentium iste
-                            possimus eveniet obcaecati eaque veniam.
-                            Ipsa amet quibusdam consectetur.</p>
+                        <p>MCR Realty Ventures OPC is your trusted partner in finding prime residential lots in Pililla, Rizal. We are committed to helping families discover their perfect sanctuary away from the city's hustle, offering flood-free, elevated properties with stunning natural views.</p>
                     </div>
 
                     <div class="footer-column">
@@ -273,7 +230,7 @@
                             <a href="#" class="social-icon">
                                 <img src="images/logo_tiktok.png" alt="TikTok">
                             </a>
-                            <a href="#" class="social-icon">
+                            <a href="https://web.facebook.com/profile.php?id=61570568061566  " class="social-icon">
                                 <img src="images/logo_fb.png" alt="Facebook">
                             </a>
                         </div>
