@@ -1,7 +1,12 @@
 
 :root{
-  --primary:#1877f2; --bg:#f3f6fb; --card:#fff; --muted:#6b7280; --danger:#b91c1c;
-  --radius:10px; --maxw:420px;
+  --primary:#1877f2; 
+  --bg:#f3f6fb; 
+  --card:#fff; 
+  --muted:#6b7280; 
+  --danger:#b91c1c;
+  --radius:10px; 
+  --maxw:420px;
 }
 body {
   background: url('../images/housepic.png') no-repeat center center fixed;
