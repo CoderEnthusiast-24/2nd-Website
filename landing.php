@@ -25,10 +25,38 @@
      
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-image"><img src="images/pic6.jpg" alt="pic6"></div>
-        <div class="hero-tagline">
-            <h2>Your Dream Home Awaits</h2>
+        <div class="slideshow-con">
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="images/carousel1.jpg" alt="carousel image">
+                <div class="text">Caption One</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="images/carousel2.jpg" alt="carousel image">
+                <div class="text">Caption Two</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="images/carousel3.jpg" alt="carousel image">
+                <div class="text">Caption Three</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="images/carousel4.jpg" alt="carousel image">
+                <div class="text">Caption Four</div>
+            </div>
+
+
+            <div class="dot-con" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
         </div>
+
+        
     </section>
 
      
@@ -244,6 +272,59 @@
         </div>
     </footer>
     
+    <script>
+        let slideIndex = 1;
+        let autoplayTimer;
+        let = isDragging = false;
+
+        showSlides(slideIndex);
+        startAutoplay();
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            resetAutoplay();
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetAutoplay();
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        function startAutoplay() {
+            autoplayTimer = setInterval(() => {
+                if (!isDragging) {
+                    plusSlides(1);
+                }
+            }, 3000); // Change slide every 4 seconds
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoplayTimer);
+            startAutoplay();
+        }
+    </script>
+    
     <script src="script/script.js"></script>
 </body>
 </html>
+        

@@ -1,4 +1,8 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   background-color: #f0f4f0;
@@ -61,7 +65,20 @@ div .logo {
   color: #52b788;
 }
 
-/* Main Content */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================= Main Content ===========================  */
 .main-container {
   flex: 1;
   display: flex;
@@ -99,7 +116,16 @@ div .logo {
   border-radius: 50%;
 }
 
-/* Content Area */
+
+
+
+
+
+
+
+
+
+/* ======================= Content Area ======================== */
 .content {
   flex: 1;
   padding: 24px;
