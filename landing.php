@@ -24,9 +24,9 @@
 
      
     <section id="home" class="hero">
-        <div class="hero-overlay"></div>
+        
         <div class="slideshow-con">
-            <div class="mySlides fade">  
+            <div class="mySlides fade">   
                 <img src="images/carousel1.jpg" alt="carousel image">
                 <div class="text">Caption One</div>
             </div>
@@ -44,7 +44,7 @@
             </div>
 
 
-            <div class="dot-con" style="text-align:center">
+            <div class="dot-con" style="text-align:center;">
                 <span class="dot" onclick="currentSlide(1)"></span> 
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 
@@ -195,6 +195,28 @@
             </div>
         </div>
     </section> 
+   
+
+
+
+    <section class="newsletter">
+        <div class="newsletter-left">
+            <img src="images/housepic.png" alt="pic">
+        </div>
+        
+        <div class="newsletter-form-wrapper" id="newsletter">
+            <div class="form-heading">
+                <h3>Get in Touch with us</h3>
+                <p>We're here to help and answer any questions you might have. We look forward to hearing from you.</p>
+                
+                <div class="inquiry-buttons">
+                    <a href="inquiry.php" class="btn-inquiry">Have an Inquiry?</a>
+                    <a href="booking.php" class="btn-booking">Book an Appointment</a>
+                </div>  
+            </div>
+        </div>
+             
+    </section>
 
       
     <footer class="footer">
@@ -302,4 +324,3 @@
 </body>
 </html>
         
-
