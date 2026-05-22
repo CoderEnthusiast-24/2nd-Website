@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])){
 
       if (password_verify($pass, $admin['password'])){
         $_SESSION['admin_id'] = $admin['id'];
-        $_SESSION['admin_name'] = $admin['fname'] + " " + $admin['lname'];
+        $_SESSION['admin_name'] = $admin['fname']. " " . $admin['lname'];
         $_SESSION['admin_email'] = $admin['email'];
 
         header('Location: dashboard/dashboard.php');
@@ -66,9 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['register'])){
     if ($result->num_rows > 0){
       $error = "There is already an account with this email";
     } else {
-      $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+      $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
 
-      $stmt = $con->prepare("INSERT INTO admin_table (fbname, lname, email, password) VALUES (?,?,?,?)");
+      $stmt = $con->prepare("INSERT INTO admin_table (fname, lname, email, password) VALUES (?,?,?,?)");
       $stmt->bind_param("ssss", $fname, $lname, $email, $hashed_password);
 
 
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['register'])){
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Admin Login - MCR Realty</title>
+      <title>Login to MCR Realty</title>
       <link rel="stylesheet" href="../css/login.css">
       <style>
           .message {
