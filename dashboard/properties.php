@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <title>Properties Management</title>
-    <link rel="stylesheet" href="../../css/dashboard.css">
-    <link rel="stylesheet" href="../../css/properties.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/properties.css">
 </head>
 <body>
     <aside class="sidebar">
-        <div class="logo"><img src="../../images/logo.png" alt="Logo"></div>
+        <div class="logo"><img src="../images/logo.png" alt="Logo"></div>
         <nav class="nav-menu">
             <div class="nav-item">
                 <a href="dashboard.php">DASHBOARD</a>
@@ -39,7 +39,7 @@
                     <!-- Property Card 1 -->
                     <div class="featured-card">
                         <div class="featured-image">
-                            <img src="../../images/pic1.jpg" alt="house1 Property">
+                            <img src="../images/pic1.jpg" alt="house1 Property">
                             <span class="location-badge">PILILLA</span>
                         </div>
                         <div class="featured-details">
@@ -56,7 +56,7 @@
                     <!-- Property Card 2 -->
                     <div class="featured-card">
                         <div class="featured-image">
-                            <img src="../../images/pic2.jpg" alt="house2 Property">
+                            <img src="../images/pic2.jpg" alt="house2 Property">
                             <span class="location-badge">PILILLA</span>
                         </div>
                         <div class="featured-details">
@@ -72,7 +72,7 @@
                     <!-- Property Card 3 -->
                     <div class="featured-card">
                         <div class="featured-image">
-                            <img src="../../images/pic3.jpg" alt="House3 Property">
+                            <img src="../images/pic3.jpg" alt="House3 Property">
                             <span class="location-badge">PILILLA</span>
                         </div>
                         <div class="featured-details">

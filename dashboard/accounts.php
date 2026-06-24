@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <title>Accounts Management</title>
-    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
     <aside class="sidebar">
-        <div class="logo"><img src="../../images/logo.png" alt="Logo"></div>
+        <div class="logo"><img src="../images/logo.png" alt="Logo"></div>
         <nav class="nav-menu">
             <div class="nav-item">
                 <a href="dashboard.php">DASHBOARD</a>

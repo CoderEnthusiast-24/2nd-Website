@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Clients Management</title>
-    <link rel="stylesheet" href="../../css/dashboard.css">
-    <link rel="stylesheet" href="../../css/clients.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/clients.css">
 </head>
 <body>
     <aside class="sidebar">
-        <div class="logo"><img src="../../images/logo.png" alt="Logo"></div>
+        <div class="logo"><img src="../images/logo.png" alt="Logo"></div>
         <nav class="nav-menu">
             <div class="nav-item active">
                 <a href="dashboard.php">DASHBOARD</a>
@@ -35,7 +35,7 @@
 
         <main class="content">
             <?php
-                require('../../links/backend/database.php');
+                require('../links/backend/database.php');
                 
                 // Count inquiries
                 $inquiry_count_query = "SELECT COUNT(*) as count FROM inquiry_table";

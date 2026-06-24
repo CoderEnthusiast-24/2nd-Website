@@ -8,34 +8,36 @@ $success = '';
 // Handle Login
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])){
-  $email = trim($_POST['email']);
-  $pass = $_POST['password'];
+  $login = trim($_POST['login']);
+  $pass = trim($_POST['password']);
 
   if (empty($email) || empty($pass)) {
     $error = 'Wrong email or password.';
   } else {
-    $stmt = $con->prepare("SELECT id, fname, lname, email, password from admin_table where email = ?");
-    $stmt->bind_param("s", $email);
+    $stmt = $con->prepare("SELECT id, username, email, password from users where email = ? OR username = ?");
+    $stmt->bind_param("ss", $login, $login);
     $stmt->execute();
     $result = $stmt->get_result();
 
 
     if ($result->num_rows === 1) {
-      $admin = $result -> fetch_assoc();
+        header('Location: ../dashboard/dashboard.php');
+    
+    //   $admin = $result -> fetch_assoc();
 
-      if (password_verify($pass, $admin['password'])){
-        $_SESSION['admin_id'] = $admin['id'];
-        $_SESSION['admin_name'] = $admin['fname']. " " . $admin['lname'];
-        $_SESSION['admin_email'] = $admin['email'];
+    //   if (password_verify($pass, $admin['password'])){
+    //     $_SESSION['admin_id'] = $admin['id'];
+    //     $_SESSION['admin_name'] = $admin['fname']. " " . $admin['lname'];
+    //     $_SESSION['admin_email'] = $admin['email'];
 
-        header('Location: dashboard/dashboard.php');
-        exit();
+    //     header('Location: ../dashboard/dashboard.php');
+    //     exit();
 
-      } else {
-        $error = "Invalid email or password.";
-      }
+    //   } else {
+    //     $error = "Invalid email or password1.";
+    //   }
     } else {
-      $error = "Invalid email or password.";
+      $error = "Invalid email or password2.";
     }
     $stmt->close();
   }
@@ -66,10 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['register'])){
     if ($result->num_rows > 0){
       $error = "There is already an account with this email";
     } else {
-      $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
+      // $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
 
-      $stmt = $con->prepare("INSERT INTO admin_table (fname, lname, email, password) VALUES (?,?,?,?)");
-      $stmt->bind_param("ssss", $fname, $lname, $email, $hashed_password);
+      $stmt = $con->prepare("INSERT INTO admin_table (fname, lname, email, username, password) VALUES (?,?,?,?,?)");
+      $stmt->bind_param("sssss", $fname, $lname, $email, $username, $pass);
+      //$hashed_password);
 
 
       if ($stmt->execute()){
@@ -83,6 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['register'])){
 }
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

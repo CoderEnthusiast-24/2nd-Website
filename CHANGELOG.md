@@ -15,3 +15,9 @@
 - Accounts management page with account overview table
 - AJAX-based status update system for inquiries and bookings (Pending, Accepted, Declined, Completed)
 - Database schema (`mcr_db.sql`) with `admin_table`, `booking_table`, `inquiry_table`, and `clients` tables
+
+## v1.0.1 - June 24, 2026
+- [TO_CONTINUE] Updated Log In Backend 
+- [REMOVED] admin folders/directory
+- Updated Database Table
+- Moved Dashboard to Main Folder Area

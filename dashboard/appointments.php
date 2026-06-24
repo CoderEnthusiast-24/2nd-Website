@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <title>Appointments Management</title>
-    <link rel="stylesheet" href="../../css/dashboard.css">
-    <link rel="stylesheet" href="../../css/appointment.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/appointment.css">
 </head>
 <body>
     <aside class="sidebar">
-        <div class="logo"><img src="../../images/logo.png" alt="Logo"></div>
+        <div class="logo"><img src="../images/logo.png" alt="Logo"></div>
         <nav class="nav-menu">
             <div class="nav-item">
                 <a href="dashboard.php">DASHBOARD</a>
@@ -34,7 +34,7 @@
 
         <main class="content">
             <?php
-                require('../../links/backend/database.php');
+                require('../links/backend/database.php');
                 
                 // Get statistics
                 $total_query = "SELECT COUNT(*) as count FROM booking_table";

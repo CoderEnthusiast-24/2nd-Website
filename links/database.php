@@ -2,7 +2,7 @@
     $server = "localhost";
     $user = "root";
     $pass = "";
-    $dbname = "db_mcr";
+    $dbname = "mcr_db";
     $con = new mysqli($server, $user, $pass, $dbname);
     if ($con) {
         echo "Connection Successful";
