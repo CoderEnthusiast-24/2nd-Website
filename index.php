@@ -8,243 +8,249 @@
 </head>
 
 <body>
-    <div id="header-container">
-        <header class="header">
-            <div class="logo"><img src="images/logo.png" alt="logo" id ="logo"></div>
-            <nav class="nav" id="mainNav">
-                <a href="#home">HOME</a>
-                <a href="#about">ABOUT</a>
-                <a href="#services">SERVICES</a>
-                <a href="#properties">PROPERTIES</a>
-                <a href="#newsletter">CONTACT US</a>
-                <a href="links/login.php">SIGN UP / LOG IN</a>
-            </nav>
-        </header>
-    </div>
-
-     
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="slideshow-con">
-            <div class="mySlides fade">  
-                <img src="images/carousel1.jpg" alt="carousel image">
-                <div class="text">Caption One</div>
-            </div>
-            <div class="mySlides fade">
-                <img src="images/carousel2.jpg" alt="carousel image">
-                <div class="text">Caption Two</div>
-            </div>
-            <div class="mySlides fade">
-                <img src="images/carousel3.jpg" alt="carousel image">
-                <div class="text">Caption Three</div>
-            </div>
-            <div class="mySlides fade">
-                <img src="images/carousel4.jpg" alt="carousel image">
-                <div class="text">Caption Four</div>
-            </div>
-
-
-            <div class="dot-con" style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span> 
-                <span class="dot" onclick="currentSlide(2)"></span> 
-                <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
+    <section class="main">
+        <div id="header-container">
+            <header class="header">
+                <div class="logo"><img src="images/logo.png" alt="logo" id ="logo"></div>
+                <nav class="nav" id="mainNav">
+                    <a href="#home">HOME</a>
+                    <a href="#about">ABOUT</a>
+                    <a href="#services">SERVICES</a>
+                    <a href="#properties">PROPERTIES</a>
+                    <a href="#newsletter">CONTACT US</a>
+                    <a href="links/login.php">SIGN UP / LOG IN</a>
+                </nav>
+            </header>
         </div>
 
         
-    </section>
-
-     
-    <section id="about" class="intro">
-        <div class="container">
-            <div class="about__content" >
-              <div class="about__intro">
-                <p class="intro-label">Introduction to MCR Realty Ventures OPC</p>
-                <h2 class="heading">Helping you find the home for you</h2>
-
-              </div>
-              
-                <div class="about__text">
-                <p> Nestled in the serene highlands of Pililla, 
-                    Rizal, our prime residential lots offer you 
-                    the perfect opportunity to build your dream 
-                    home away from the hustle and bustle of city
-                    life. Located in one of Rizal's most promising 
-                    areas, these properties combine natural beauty 
-                    with practical advantages that make them ideal 
-                    for families seeking a peaceful sanctuary.
-                </p>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="slideshow-con">
+                <div>
+                    <div class="mySlides fade">  
+                        <img src="images/carousel1.jpg" alt="carousel image">
+                        <div class="text"></div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/carousel2.jpg" alt="carousel image">
+                        <div class="text">Caption Two</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/carousel3.jpg" alt="carousel image">
+                        <div class="text">Caption Three</div>
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/carousel4.jpg" alt="carousel image">
+                        <div class="text">Caption Four</div>
+                    </div>
                 </div>
 
-            </div>  
-            <div class="intro-cards">
-                <div class="card">
-                    <img src="images/pic2.jpg" alt="house1">
+
+                <div class="dot-con" style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span> 
+                    <span class="dot" onclick="currentSlide(2)"></span> 
+                    <span class="dot" onclick="currentSlide(3)"></span> 
+                    <span class="dot" onclick="currentSlide(4)"></span>
                 </div>
-                <div class="card">
-                    <img src="images/pic3.jpg" alt="house2">
-                </div>
-                <div class="card">
-                    <img src="images/pic4.jpg" alt="house3">
-                </div>   
+
             </div>
-        </div>
-    </section>
 
-     
-    <section id="services" class="featured">
-        <div class="container">
-            <div class="featured__content">
-                <div class="featured__image">
-                    <img src="images/pic5.jpg" alt="house">
-                </div>
-                <div class="featured__text">
-                    <h2 class="heading">Featured Property</h2>
-                    <a href="#" class="button">Click to see more...</a>
-                    <p>
-                    this is best property our real estate has to offer
-                    as we look at the exterior design as grand as it look
-                    we could expect more and be amamzed on how beautiful
-                    the interior is.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-     
-    <section class="portfolio" id="properties">
-        <div class="container">
-            <h2 class="heading">Our properties</h2>
-
-            <div class="property">
-                <table class="property__table">
-                    <tr class="property__row">
-                        <td class="property__data">
-                            <h2>Pililla Heights 1</h2>
-                            <p> "Own your slice of paradise in Pililla, Rizal 🌿✨.</p>
-
-                            <br>
-                            
-                            <p>
-                            📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
-                            💰 ₱ 5000 – ₱ 7000 / SQM</p> 
-                        </td>
-                        <td class="property-image">
-                            <img src="images/pic1.jpg" alt="house4">
-                        </td>
-                    </tr>
-                    <tr class="property__row">
-                        <td class="property-image">
-                            <img src="images/pic2.jpg" alt="house4">
-                        </td>
-                        <td class="property__data">
-                            <h2>Pililla Heights 2</h2>
-                            <p> Prime residential lots now available — peaceful, elevated, and flood-free!".</p>
-                            <br>
-                            <p>
-                            📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
-                            💰 ₱ 6000 – ₱ 8000 / SQM</p>
-                        </td>
-                    </tr>
-                    <tr class="property__row">
-                        <td class="property__data">
-                            <h2>Pililla Heights 3</h2>
-                            <p> "Own your slice of paradise in Pililla, Rizal 🌿✨.</p>
-
-                            <br>
-                            
-                            <p>
-                            📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
-                            💰 ₱ 5000 – ₱ 7000 / SQM</p> 
-                        </td>
-                        <td class="property-image">
-                            <img src="images/pic3.jpg" alt="house4">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </section>
-
-     
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="tite" style="color: white; font-size: 50px; text-align: center; margin-bottom: 60px;">Showcasing expertise</h2>
-           
             
-            <div class="achievements">
-                <div class="ach__con">
-                    <img src="images/award1.png" alt="award">
-                    <div class="ach__con-text">
-                        <h3>2025</h3>
-                        <h4>Trusted Realty Company</h4>
-                        <p>MCR Realty Ventures</p>
-                    </div>
-                </div>
-                <div class="ach__con">
-                    <img src="images/award2.png" alt="award">
-                    <div class="ach__con-text">
-                        <h3>2025</h3>
-                        <h4>Business Excellence</h4>
-                        <p>MCR Realty Ventures</p>
-                    </div>
-                    <h3></h3>
-                </div>
-            </div>
-        </div>
-    </section> 
+        </section>
 
-      
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-columns">
-                    <div class="footer-column">
-                        <h3>MCR REALTY VENTURES OPC</h3>
-                        <p>MCR Realty Ventures OPC is your trusted partner in finding prime residential lots in Pililla, Rizal. We are committed to helping families discover their perfect sanctuary away from the city's hustle, offering flood-free, elevated properties with stunning natural views.</p>
-                    </div>
+        
+        <section id="about" class="intro">
+            <div class="container">
+                <div class="about__content" >
+                <div class="about__intro">
+                    <p class="intro-label">Introduction to MCR Realty Ventures OPC</p>
+                    <h2 class="heading">Helping you find the home for you</h2>
 
-                    <div class="footer-column">
-                        <h3>GET IN TOUCH</h3>
-                        <p class="contact-info">
-                            +63 9420696766<br>
-                            McrRealtyVenturesOpc@gmail.com<br>
-                            therealestate@gmail.com
-                        </p>
-                    </div>
-
-                    <div class="footer-column">
-                        <h3>USEFUL LINKS</h3>
-                        <a href="#home">Home</a>
-                        <a href="#about">About Us</a>
-                        <a href="#properties">Properties</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-
-                    <div class="footer-column">
-                        <h3>FOLLOW US</h3>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon">
-                                <img src="images/logo_x.png" alt="X">
-                            </a>
-                            <a href="#" class="social-icon">
-                                <img src="images/logo_tiktok.png" alt="TikTok">
-                            </a>
-                            <a href="https://web.facebook.com/profile.php?id=61570568061566  " class="social-icon">
-                                <img src="images/logo_fb.png" alt="Facebook">
-                            </a>
-                        </div>
-                    </div>
                 </div>
                 
+                    <div class="about__text">
+                    <p> Nestled in the serene highlands of Pililla, 
+                        Rizal, our prime residential lots offer you 
+                        the perfect opportunity to build your dream 
+                        home away from the hustle and bustle of city
+                        life. Located in one of Rizal's most promising 
+                        areas, these properties combine natural beauty 
+                        with practical advantages that make them ideal 
+                        for families seeking a peaceful sanctuary.
+                    </p>
+                    </div>
+
+                </div>  
+                <div class="intro-cards">
+                    <div class="card">
+                        <img src="images/pic2.jpg" alt="house1">
+                    </div>
+                    <div class="card">
+                        <img src="images/pic3.jpg" alt="house2">
+                    </div>
+                    <div class="card">
+                        <img src="images/pic4.jpg" alt="house3">
+                    </div>   
+                </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Privacy Notice - Terms and Conditions</p>
-        </div>
-    </footer>
+        </section>
+
+        
+        <section id="services" class="featured">
+            <div class="container">
+                <div class="featured__content">
+                    <div class="featured__image">
+                        <img src="images/pic5.jpg" alt="house">
+                    </div>
+                    <div class="featured__text">
+                        <h2 class="heading">Featured Property</h2>
+                        <a href="#" class="button">Click to see more...</a>
+                        <p>
+                        this is best property our real estate has to offer
+                        as we look at the exterior design as grand as it look
+                        we could expect more and be amamzed on how beautiful
+                        the interior is.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="portfolio" id="properties">
+            <div class="container">
+                <h2 class="heading">Our properties</h2>
+
+                <div class="property">
+                    <table class="property__table">
+                        <tr class="property__row">
+                            <td class="property__data">
+                                <h2>Pililla Heights 1</h2>
+                                <p> "Own your slice of paradise in Pililla, Rizal 🌿✨.</p>
+
+                                <br>
+                                
+                                <p>
+                                📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
+                                💰 ₱ 5000 – ₱ 7000 / SQM</p> 
+                            </td>
+                            <td class="property-image">
+                                <img src="images/pic1.jpg" alt="house4">
+                            </td>
+                        </tr>
+                        <tr class="property__row">
+                            <td class="property-image">
+                                <img src="images/pic2.jpg" alt="house4">
+                            </td>
+                            <td class="property__data">
+                                <h2>Pililla Heights 2</h2>
+                                <p> Prime residential lots now available — peaceful, elevated, and flood-free!".</p>
+                                <br>
+                                <p>
+                                📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
+                                💰 ₱ 6000 – ₱ 8000 / SQM</p>
+                            </td>
+                        </tr>
+                        <tr class="property__row">
+                            <td class="property__data">
+                                <h2>Pililla Heights 3</h2>
+                                <p> "Own your slice of paradise in Pililla, Rizal 🌿✨.</p>
+
+                                <br>
+                                
+                                <p>
+                                📍 Sitio Matagbak, Brgy. Bagumbayan Pililla Rizal <br>
+                                💰 ₱ 5000 – ₱ 7000 / SQM</p> 
+                            </td>
+                            <td class="property-image">
+                                <img src="images/pic3.jpg" alt="house4">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="tite" style="color: white; font-size: 50px; text-align: center; margin-bottom: 60px;">Showcasing expertise</h2>
+            
+                
+                <div class="achievements">
+                    <div class="ach__con">
+                        <img src="images/award1.png" alt="award">
+                        <div class="ach__con-text">
+                            <h3>2025</h3>
+                            <h4>Trusted Realty Company</h4>
+                            <p>MCR Realty Ventures</p>
+                        </div>
+                    </div>
+                    <div class="ach__con">
+                        <img src="images/award2.png" alt="award">
+                        <div class="ach__con-text">
+                            <h3>2025</h3>
+                            <h4>Business Excellence</h4>
+                            <p>MCR Realty Ventures</p>
+                        </div>
+                        <h3></h3>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-columns">
+                        <div class="footer-column">
+                            <h3>MCR REALTY VENTURES OPC</h3>
+                            <p>MCR Realty Ventures OPC is your trusted partner in finding prime residential lots in Pililla, Rizal. We are committed to helping families discover their perfect sanctuary away from the city's hustle, offering flood-free, elevated properties with stunning natural views.</p>
+                        </div>
+
+                        <div class="footer-column">
+                            <h3>GET IN TOUCH</h3>
+                            <p class="contact-info">
+                                +63 9420696766<br>
+                                McrRealtyVenturesOpc@gmail.com<br>
+                                therealestate@gmail.com
+                            </p>
+                        </div>
+
+                        <div class="footer-column">
+                            <h3>USEFUL LINKS</h3>
+                            <a href="#home">Home</a>
+                            <a href="#about">About Us</a>
+                            <a href="#properties">Properties</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+
+                        <div class="footer-column">
+                            <h3>FOLLOW US</h3>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon">
+                                    <img src="images/logo_x.png" alt="X">
+                                </a>
+                                <a href="#" class="social-icon">
+                                    <img src="images/logo_tiktok.png" alt="TikTok">
+                                </a>
+                                <a href="https://web.facebook.com/profile.php?id=61570568061566  " class="social-icon">
+                                    <img src="images/logo_fb.png" alt="Facebook">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Privacy Notice - Terms and Conditions</p>
+            </div>
+        </footer>
+    </section>
+    
     
     <script>
         let slideIndex = 1;

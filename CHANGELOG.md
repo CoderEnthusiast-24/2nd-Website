@@ -21,3 +21,6 @@
 - [REMOVED] admin folders/directory
 - Updated Database Table
 - Moved Dashboard to Main Folder Area
+
+## v1.0.2 - June 29, 2026
+- [FIXING] Carousel / 
